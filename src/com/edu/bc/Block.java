@@ -10,7 +10,7 @@ public class Block {
 	private long timeStamp; //as number of milliseconds since 1/1/1970.
 	private int nonce;
 	
-	//Block Constructor.
+	//Block Constructor in new branch
 	public Block(String data,String previousHash ) {
 		this.data = data;
 		this.previousHash = previousHash;
@@ -28,6 +28,7 @@ public class Block {
 		return calculatedhash;
 	}
 	
+	// mining the block
 	public void mineBlock(int difficulty) {		
 		String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0" 
 		System.out.println("Hash before mining !!!!!! : " + hash);
